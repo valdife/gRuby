@@ -1,5 +1,7 @@
 # gRuby
 
+Stack: Faraday, Selenium 
+
 
 Simple test env:
 
