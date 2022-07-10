@@ -19,7 +19,7 @@ class SMSActivate
     end
 
     def getNumbersStatus(country)
-        #glovo only
+        #hardcoded to glovo
         response = @conn.get(
             '', 
             {
@@ -31,7 +31,7 @@ class SMSActivate
     end
 
     def getNumber 
-        response = @conn.get(
+        response = @conn.post(
             '',
             {
                 action: 'getNumberV2',
@@ -39,15 +39,30 @@ class SMSActivate
                 country: '1',
             }
         )
-        @activation_id = nil
+        @activation_id = JSON.parse(response.body)["activationId"]
         
         return response
     end
 
-    def setStatus
+    def setStatus(activation_id, status)
+        response = @conn.post(
+            '',
+            {
+                action: 'setStatus',
+                id: activation_id,
+                status: status,
+            }
+        )
     end
 
-    def getStatus
+    def getStatus(activation_id)
+        response = @conn.get(
+            '',
+            {
+                action: 'getStatus',
+                id: activation_id,
+            }
+        )
     end
 
 end
