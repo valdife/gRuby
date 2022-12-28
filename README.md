@@ -1,6 +1,6 @@
 # gRuby
 
-Stack: Faraday, Selenium 
+Stack: Faraday, Selenium, Ruby
 
 
 Simple test env:
