@@ -7,7 +7,8 @@ Use only in educational purpose (please).
 
 
 
-Stack: Faraday, Selenium, Ruby
+Stack: Faraday, Selenium, Ruby. 
+
 Simple test env:
 
 irb -r ./api_client.rb
